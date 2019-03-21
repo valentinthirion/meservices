@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+        <template id="snippet_meservices" name="ME Services snippet">
+            <section class="snippet_testimonial">
+                <div class="container text-center">
+                    <div class="row">
+                        <h1>Contact Form</h1>
+                        <form method="POST" action="" enctype="multipart/form-data">
+                            <label for='contact_name'>Name</label>
+                            <input type="text" id="contact_name" name="contact_name"/><br/>
+
+                            <label for='street'>Street and #</label>
+                            <input type="text" id="street" name="street"/><br/>
+                            <label for='city'>City</label>
+                            <input type="text" id="city" name="city"/><br/>
+                            <label for='zip'>ZIP</label>
+                            <input type="text" id="zip" name="zip"/><br/>
+
+                            <label for='mobile'>Mobile</label>
+                            <input type="text" id="mobile" name="mobile"/><br/>
+
+                            <label for='x_nest_location'>Nest situation</label>
+                            <select id="x_nest_location" name="x_nest_location">
+                                <option value="outside_high">out</option>
+                                <option value="inside">in</option>
+                                <option value="outside_floor">out floot</option>
+                            </select><br/>
+
+                            <label for='x_details'>Details</label>
+                            <textarea id="x_details" name="x_details"/><br/>
+
+                            <label for='x_already_came'>Already came</label>
+                            <input type="checkbox" id="x_already_came" name="x_already_came"/><br/>
+                            <script>
+                                $( function() {
+                                $( "#x_already_came_date" ).datepicker({ dateFormat: 'yy-mm-dd' });
+                                } );
+                            </script>
+                            <label for='x_already_came_date'>If already came, date</label>
+                            <input type="text" id="x_already_came_date" name="x_already_came_date"/><br/>
+
+                            <label for='description'>Addition information</label>  <textarea id="description" name="description"/><br/>
+
+                            <label for='x_insect_type'>Insect type</label>
+                            <select id="x_insect_type" name="x_insect_type">
+                                <option value="frelons">Frelons</option>
+                                <option value="autres">Autres</option>
+                                <option value="guepes">Guepes</option>
+                                <option value="abeilles">Abeilles</option>
+                            </select><br/>
+                            <input type="hidden" name="form_id" value="1"/>
+                            <input type="submit" value="Send"/>
+                            <input type="hidden" name="my_pie" value="3.14"/>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </template>
+
+        <template id="place_into_bar" inherit_id="website.snippets" name="Place into bar">
+            <xpath expr="//div[@id='snippet_structure']/div[@class='o_panel_body']" position="inside">
+                <t t-snippet="meservices.snippet_meservices" t-thumbnail="/theme_tutorial/static/src/img/ui/snippet_thumb.jpg"/>
+            </xpath>
+        </template>
+    </data>
+</openerp>
