@@ -2,57 +2,67 @@
 
 <openerp>
     <data>
-        <template id="snippet_meservices" name="ME Services snippet">
+        <template id="snippet_meservices" name="ME Services Contact Form snippet">
             <section class="snippet_testimonial">
                 <div class="container text-center">
                     <div class="row">
-                        <h1>Contact Form</h1>
-                        <form method="POST" action="" enctype="multipart/form-data">
-                            <label for='contact_name'>Name</label>
-                            <input type="text" id="contact_name" name="contact_name"/><br/>
+                        <h4 class="page-header mt-16">Contact Form</h4>
+                        <form method="POST" action="/meservices/contact" enctype="multipart/form-data">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <div class="col-md-6" style="clear: left;">
+                                <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name"/>
+                            </div>
+                            <div class="col-md-6" style="clear: left;">
+                                <input type="text" id="mobile" name="mobile" class="form-control" placeholder="Mobile"/>
+                            </div>
+                            <div class="col-md-4" style="clear: left;">
+                                <input type="text" id="street" name="street" class="form-control" placeholder="Address"/>
+                            </div>
+                            <div class="col-md-6" style="clear: left;">
+                                <input type="text" id="city" name="city" class="form-control" placeholder="City"/>
+                            </div>
+                            <div class="col-md-2" style="clear: left;">
+                                <input type="text" id="zip" name="zip" class="form-control" placeholder="ZIP"/>
+                            </div>
 
-                            <label for='street'>Street and #</label>
-                            <input type="text" id="street" name="street"/><br/>
-                            <label for='city'>City</label>
-                            <input type="text" id="city" name="city"/><br/>
-                            <label for='zip'>ZIP</label>
-                            <input type="text" id="zip" name="zip"/><br/>
-
-                            <label for='mobile'>Mobile</label>
-                            <input type="text" id="mobile" name="mobile"/><br/>
-
-                            <label for='x_nest_location'>Nest situation</label>
-                            <select id="x_nest_location" name="x_nest_location">
-                                <option value="outside_high">out</option>
-                                <option value="inside">in</option>
-                                <option value="outside_floor">out floot</option>
-                            </select><br/>
-
-                            <label for='x_details'>Details</label>
-                            <textarea id="x_details" name="x_details"/><br/>
-
-                            <label for='x_already_came'>Already came</label>
-                            <input type="checkbox" id="x_already_came" name="x_already_came"/><br/>
-                            <script>
-                                $( function() {
-                                $( "#x_already_came_date" ).datepicker({ dateFormat: 'yy-mm-dd' });
-                                } );
-                            </script>
-                            <label for='x_already_came_date'>If already came, date</label>
-                            <input type="text" id="x_already_came_date" name="x_already_came_date"/><br/>
-
-                            <label for='description'>Addition information</label>  <textarea id="description" name="description"/><br/>
-
-                            <label for='x_insect_type'>Insect type</label>
-                            <select id="x_insect_type" name="x_insect_type">
-                                <option value="frelons">Frelons</option>
-                                <option value="autres">Autres</option>
-                                <option value="guepes">Guepes</option>
-                                <option value="abeilles">Abeilles</option>
-                            </select><br/>
-                            <input type="hidden" name="form_id" value="1"/>
-                            <input type="submit" value="Send"/>
-                            <input type="hidden" name="my_pie" value="3.14"/>
+                            <div class="col-md-4" style="clear: left;">
+                                <strong for='insect_type'>Insect type</strong>
+                                <select id="insect_type" name="insect_type" class="form-control">
+                                    <option value="wasps">Wasps</option>
+                                    <option value="hornets">Hornets</option>
+                                    <option value="others">Others</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4" style="clear: left;">
+                                <strong for='nest_location'>Nest situation</strong>
+                                <select id="nest_location" name="nest_location" class="form-control">
+                                    <option value="inside">Inside</option>
+                                    <option value="outside_floor">Outside on the floor</option>
+                                    <option value="outside_high">Outside high</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4" style="clear: left;">
+                                <textarea id="details" name="details" class="form-control" placeholder="Enter here details about the nest location..."/>
+                            </div>
+                            <div class="col-md-2" style="clear: left;">
+                                <strong for='already_came'>Already came</strong>
+                                <input type="checkbox" id="already_came" name="already_came" />
+                            </div>
+                            <div class="col-md-3" style="clear: left;">
+                                <script>
+                                    $( function() {
+                                    $( "#x_already_came_date" ).datepicker({ dateFormat: 'yy-mm-dd' });
+                                    } );
+                                </script>
+                                <strong for='already_came_date'>If already came, specify the date</strong>
+                                <input type="text" id="already_came_date" name="already_came_date" class="form-control"/>
+                            </div>
+                            <div class="col-md-6" style="clear: left;">
+                                <textarea id="description" name="description" class="form-control" placeholder="Give here every information that could help us prepare the intervention..."/>
+                            </div>
+                            <div class="col-md-1" style="clear: left;">
+                                <input type="submit" value="Send" class="btn btn-primary btn-lg"/>
+                            </div>
                         </form>
                     </div>
                 </div>
