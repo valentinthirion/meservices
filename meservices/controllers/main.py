@@ -6,12 +6,11 @@ from openerp.http import request
 
 _logger = logging.getLogger(__name__)
  
-class WebsiteMEServicesContactFOrm(http.Controller):
+class WebsiteMEServicesContactForm(http.Controller):
 
-    @http.route(['/meservices/contact'], type='http', auth="user", methods=['POST'], website=True)
+    @http.route(['/contactform/sent'], type='http', auth="public", methods=['POST'], website=True)
     def contacted_form(self, redirect=None, **post):
         if post:
-
             # Partner
             partner_id = request.env['res.partner'].sudo().create({
                 'name': post['contact_name'],
@@ -56,10 +55,16 @@ class WebsiteMEServicesContactFOrm(http.Controller):
             _logger.debug("\n\n Request: %s", request)
             #company = request.env['']
 
-            email_desc = _("Hello,<br />A new request has been made on your website.")
+            email_desc = _("Hello,<br />A new request has been made on your website.<br />")
             email_desc += _("<br />Nom: ") + post['contact_name']
-            email_desc += _("<br />Info: ") + line_description.replace('\n', '<br />')
+            email_desc += _("<br />Mobile: ") + post['mobile']
+            email_desc += _("<br />Address: ") + post['street'] + ", " + post['zip'] + " " + post['city']
+            email_desc += _("<br />")
+            email_desc += _("<br />Info: <br />") + line_description.replace('\n', '<br />')
             email_desc += _("<br /><br />Have a great day")
+            base_url = request.env['ir.config_parameter'].sudo().get_param('web.base.url')
+            url = "%s/web#id=%s&view_type=form&model=sale.order" % (base_url, sale_order_id.id)
+            email_desc += _("<br />check it out here: <a href='") + url + "'>here</a>"
 
             mail_id = request.env['mail.mail'].create({
                 'body_html': email_desc,
@@ -71,3 +76,5 @@ class WebsiteMEServicesContactFOrm(http.Controller):
                 'auto_delete': False,
             })
             request.env['mail.mail'].send([mail_id])
+        else:
+            return request.redirect("/")

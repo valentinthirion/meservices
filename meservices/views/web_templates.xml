@@ -7,27 +7,27 @@
                 <div class="container text-center">
                     <div class="row">
                         <h4 class="page-header mt-16">Contact Form</h4>
-                        <form method="POST" action="/meservices/contact" enctype="multipart/form-data">
+                        <form method="POST" action="/contactform/sent" enctype="multipart/form-data">
                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                             <div class="col-md-6" style="clear: left;">
-                                <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name"/>
+                                <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name" required="This field is required"/>
                             </div>
                             <div class="col-md-6" style="clear: left;">
-                                <input type="text" id="mobile" name="mobile" class="form-control" placeholder="Mobile"/>
+                                <input type="text" id="mobile" name="mobile" class="form-control" placeholder="Mobile" required="This field is required"/>
                             </div>
                             <div class="col-md-4" style="clear: left;">
-                                <input type="text" id="street" name="street" class="form-control" placeholder="Address"/>
+                                <input type="text" id="street" name="street" class="form-control" placeholder="Address" required="This field is required"/>
                             </div>
                             <div class="col-md-6" style="clear: left;">
-                                <input type="text" id="city" name="city" class="form-control" placeholder="City"/>
+                                <input type="text" id="city" name="city" class="form-control" placeholder="City" required="This field is required"/>
                             </div>
                             <div class="col-md-2" style="clear: left;">
-                                <input type="text" id="zip" name="zip" class="form-control" placeholder="ZIP"/>
+                                <input type="text" id="zip" name="zip" class="form-control" placeholder="ZIP" required="This field is required"/>
                             </div>
 
                             <div class="col-md-4" style="clear: left;">
                                 <strong for='insect_type'>Insect type</strong>
-                                <select id="insect_type" name="insect_type" class="form-control">
+                                <select id="insect_type" name="insect_type" class="form-control" required="This field is required">
                                     <option value="wasps">Wasps</option>
                                     <option value="hornets">Hornets</option>
                                     <option value="others">Others</option>
@@ -35,7 +35,7 @@
                             </div>
                             <div class="col-md-4" style="clear: left;">
                                 <strong for='nest_location'>Nest situation</strong>
-                                <select id="nest_location" name="nest_location" class="form-control">
+                                <select id="nest_location" name="nest_location" class="form-control" required="This field is required">
                                     <option value="inside">Inside</option>
                                     <option value="outside_floor">Outside on the floor</option>
                                     <option value="outside_high">Outside high</option>
@@ -48,14 +48,9 @@
                                 <strong for='already_came'>Already came</strong>
                                 <input type="checkbox" id="already_came" name="already_came" />
                             </div>
-                            <div class="col-md-3" style="clear: left;">
-                                <script>
-                                    $( function() {
-                                    $( "#x_already_came_date" ).datepicker({ dateFormat: 'yy-mm-dd' });
-                                    } );
-                                </script>
+                            <div class="col-md-3" style="clear: left; display: none;" id="already_came_date_block">
                                 <strong for='already_came_date'>If already came, specify the date</strong>
-                                <input type="text" id="already_came_date" name="already_came_date" class="form-control"/>
+                                <input type="date" id="already_came_date" name="already_came_date" class="form-control o_website_form_input o_website_form_date"/>
                             </div>
                             <div class="col-md-6" style="clear: left;">
                                 <textarea id="description" name="description" class="form-control" placeholder="Give here every information that could help us prepare the intervention..."/>
@@ -63,6 +58,24 @@
                             <div class="col-md-1" style="clear: left;">
                                 <input type="submit" value="Send" class="btn btn-primary btn-lg"/>
                             </div>
+
+                            <script>
+                <![CDATA[
+odoo.define('meservices.contact_form', ['web.ajax'], function (require) {
+    "use strict";
+    const checkbox = document.getElementById('already_came');
+    const already_came_date = document.getElementById('already_came_date_block');
+
+    checkbox.addEventListener('change', (event) => {
+      if (checkbox.checked) {
+        already_came_date.style.display = 'inline';
+      } else {
+        already_came_date.style.display = 'none';
+      }
+    });
+});
+            ]]>
+                            </script>
                         </form>
                     </div>
                 </div>
