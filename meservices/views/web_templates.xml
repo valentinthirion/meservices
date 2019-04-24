@@ -7,7 +7,7 @@
                 <div class="container text-center">
                     <div class="row">
                         <h4 class="page-header mt-16">Contact Form</h4>
-                        <form method="POST" action="/contactform/sent" enctype="multipart/form-data">
+                        <form method="POST" action="/contactform" enctype="multipart/form-data">
                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                             <div class="col-md-6" style="clear: left;">
                                 <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name" required="This field is required"/>
@@ -80,6 +80,18 @@ odoo.define('meservices.contact_form', ['web.ajax'], function (require) {
                     </div>
                 </div>
             </section>
+        </template>
+
+        <template id="contact_form_sent" name="Contact form sent">
+            <t t-call="website.layout">
+                <section t-attf-class="container mt8" id="contact_form_sent">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            Thanks for sending us your request, we will be back to you soon.
+                        </div>
+                    </div>
+                </section>
+            </t>
         </template>
 
         <template id="place_into_bar" inherit_id="website.snippets" name="Place into bar">
