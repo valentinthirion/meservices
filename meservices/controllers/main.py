@@ -59,10 +59,10 @@ class WebsiteMEServicesContactForm(http.Controller):
 
             email_desc = _("Hello,<br />A new request has been made on your website.<br />")
             email_desc += _("<br /><b><u>Name:</b></u> ") + post['contact_name']
-            email_desc += _("<br /><b><u>Mobile</b></u> ") + post['mobile']
-            email_desc += _("<br /><b><u>Address</b></u> ") + post['street'] + ", " + post['zip'] + " " + post['city']
+            email_desc += _("<br /><b><u>Mobile:</b></u> ") + post['mobile']
+            email_desc += _("<br /><b><u>Address:</b></u> ") + post['street'] + ", " + post['zip'] + " " + post['city']
             email_desc += _("<br />")
-            email_desc += _("<br /><b><u>Info</b></u> <br />") + line_description.replace('\n', '<br />')
+            email_desc += _("<br /><b><u>Info:</b></u> <br />") + line_description.replace('\n', '<br />')
             email_desc += _("<br /><br />Have a great day")
             base_url = request.env['ir.config_parameter'].sudo().get_param('web.base.url')
             url = "%s/web#id=%s&view_type=form&model=sale.order" % (base_url, sale_order_id.id)
