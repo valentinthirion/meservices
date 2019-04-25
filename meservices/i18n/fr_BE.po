@@ -1,0 +1,240 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* meservices
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c-20170730\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-25 19:33+0000\n"
+"PO-Revision-Date: 2019-04-25 21:43+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr_BE\n"
+"X-Generator: Poedit 2.2.1\n"
+
+#. module: meservices
+#: code:addons/meservices/controllers/main.py:40
+#, python-format
+msgid ""
+"\n"
+"Already came on: "
+msgstr ""
+"\n"
+"Déjà venu le :"
+
+#. module: meservices
+#: code:addons/meservices/controllers/main.py:36
+#, python-format
+msgid ""
+"\n"
+"Details: "
+msgstr ""
+"\n"
+"Détails : "
+
+#. module: meservices
+#: code:addons/meservices/controllers/main.py:35
+#, python-format
+msgid ""
+"\n"
+"Nest location: "
+msgstr ""
+"\n"
+"Situation du nid /"
+
+#. module: meservices
+#: code:addons/meservices/controllers/main.py:43
+#, python-format
+msgid ""
+"\n"
+"Notes: "
+msgstr ""
+"\n"
+"Commentaire : "
+
+#. module: meservices
+#: code:addons/meservices/controllers/main.py:63
+#, python-format
+msgid "<br /><b><u>Address:</b></u> "
+msgstr "<br /><b><u>Adresse :</b></u> "
+
+#. module: meservices
+#: code:addons/meservices/controllers/main.py:65
+#, python-format
+msgid "<br /><b><u>Info:</b></u> <br />"
+msgstr "<br /><b><u>Informations :</b></u> <br />"
+
+#. module: meservices
+#: code:addons/meservices/controllers/main.py:62
+#, python-format
+msgid "<br /><b><u>Mobile:</b></u> "
+msgstr "<br /><b><u>GSM :</b></u> "
+
+#. module: meservices
+#: code:addons/meservices/controllers/main.py:61
+#, python-format
+msgid "<br /><b><u>Name:</b></u> "
+msgstr "<br /><b><u>Nom et prénom:</b></u> "
+
+#. module: meservices
+#: code:addons/meservices/controllers/main.py:66
+#, python-format
+msgid "<br /><br />Have a great day"
+msgstr "<br /><br />Nous vous souhaitons une bonne journée"
+
+#. module: meservices
+#: code:addons/meservices/controllers/main.py:69
+#, python-format
+msgid "<br />check it out here: <a href='"
+msgstr "<br />consultez le ici : <a href='"
+
+#. module: meservices
+#: model:ir.ui.view,arch_db:meservices.snippet_meservices
+msgid "<strong for=\"already_came\">Already came</strong>"
+msgstr "<strong for=\"already_came\">Déjà venu</strong>"
+
+#. module: meservices
+#: model:ir.ui.view,arch_db:meservices.snippet_meservices
+msgid "<strong for=\"already_came_date\">If already came, specify the date</strong>"
+msgstr "<strong for=\"already_came_date\">Si déjà venu, merci de spécifier la date</strong>"
+
+#. module: meservices
+#: model:ir.ui.view,arch_db:meservices.snippet_meservices
+msgid "<strong for=\"insect_type\">Insect type</strong>"
+msgstr "<strong for=\"insect_type\">Type d'insectes</strong>"
+
+#. module: meservices
+#: model:ir.ui.view,arch_db:meservices.snippet_meservices
+msgid "<strong for=\"nest_location\">Nest situation</strong>"
+msgstr "<strong for=\"nest_location\">Situation du nid</strong>"
+
+#. module: meservices
+#: model:ir.model.fields,field_description:meservices.field_sale_order_line_notes
+msgid "Additional information"
+msgstr "Informations suppllémentaires"
+
+#. module: meservices
+#: model:ir.ui.view,arch_db:meservices.snippet_meservices
+msgid "Address"
+msgstr "Adresse"
+
+#. module: meservices
+#: model:ir.model.fields,field_description:meservices.field_sale_order_line_already_came
+msgid "Already came"
+msgstr "Déjà venu"
+
+#. module: meservices
+#: model:ir.model.fields,field_description:meservices.field_sale_order_line_already_came_date
+msgid "Already came date"
+msgstr "Date du premier passage"
+
+#. module: meservices
+#: model:ir.ui.view,arch_db:meservices.snippet_meservices
+msgid "City"
+msgstr "Ville"
+
+#. module: meservices
+#: model:ir.ui.view,arch_db:meservices.snippet_meservices
+msgid "Contact Form"
+msgstr "Formulaire de contact"
+
+#. module: meservices
+#: model:ir.ui.view,arch_db:meservices.snippet_meservices
+msgid "Enter here details about the nest location..."
+msgstr "Entrez ici quelques détails sur l'emplacement du nid"
+
+#. module: meservices
+#: model:ir.ui.view,arch_db:meservices.snippet_meservices
+msgid "Give here every information that could help us prepare the intervention..."
+msgstr "Donnez nus toute information utile à notre intervention ..."
+
+#. module: meservices
+#: code:addons/meservices/controllers/main.py:60
+#, python-format
+msgid "Hello,<br />A new request has been made on your website.<br />"
+msgstr "Bonjour,<br />Une nouvelle demande a été introduite sur votre site web.<br />"
+
+#. module: meservices
+#: model:ir.ui.view,arch_db:meservices.snippet_meservices
+msgid "Hornets"
+msgstr "Frelons"
+
+#. module: meservices
+#: model:ir.model.fields,field_description:meservices.field_sale_order_line_insect_type
+msgid "Insect type"
+msgstr "Type d'insectes"
+
+#. module: meservices
+#: code:addons/meservices/controllers/main.py:34
+#, python-format
+msgid "Insect type: "
+msgstr "Type d'insectes :"
+
+#. module: meservices
+#: model:ir.ui.view,arch_db:meservices.snippet_meservices
+msgid "Inside"
+msgstr "Intérieur"
+
+#. module: meservices
+#: model:ir.ui.view,arch_db:meservices.snippet_meservices
+msgid "Mobile"
+msgstr "GSM"
+
+#. module: meservices
+#: model:ir.ui.view,arch_db:meservices.snippet_meservices
+msgid "Name"
+msgstr "Nom"
+
+#. module: meservices
+#: model:ir.model.fields,field_description:meservices.field_sale_order_line_nest_location
+msgid "Nest location"
+msgstr "Emplacement du nid"
+
+#. module: meservices
+#: model:ir.ui.view,arch_db:meservices.snippet_meservices
+msgid "Others"
+msgstr "Autres"
+
+#. module: meservices
+#: model:ir.ui.view,arch_db:meservices.snippet_meservices
+msgid "Outside high"
+msgstr "Extérieur en hauteur"
+
+#. module: meservices
+#: model:ir.ui.view,arch_db:meservices.snippet_meservices
+msgid "Outside on the floor"
+msgstr "Extérieur au sol"
+
+#. module: meservices
+#: model:ir.model,name:meservices.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Ligne du bon de commande"
+
+#. module: meservices
+#: model:ir.model.fields,field_description:meservices.field_sale_order_line_situation_details
+msgid "Situation description"
+msgstr "Description de la situation"
+
+#. module: meservices
+#: model:ir.ui.view,arch_db:meservices.contact_form_sent
+msgid ""
+"Thanks for sending us your request, we will be back to you soon.\n"
+"                            <br/>"
+msgstr ""
+"Merci pour votre message, nous reviendrons vers vous rapidement.\n"
+"                            <br/>"
+
+#. module: meservices
+#: model:ir.ui.view,arch_db:meservices.snippet_meservices
+msgid "Wasps"
+msgstr "Guêpes"
+
+#. module: meservices
+#: model:ir.ui.view,arch_db:meservices.snippet_meservices
+msgid "ZIP"
+msgstr "Code postal"
