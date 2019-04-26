@@ -68,11 +68,13 @@ class WebsiteMEServicesContactForm(http.Controller):
             url = "%s/web#id=%s&view_type=form&model=sale.order" % (base_url, sale_order_id.id)
             email_desc += _("<br />check it out here: <a href='") + url + "'>here</a>"
 
+            email_to = request.website.company_id.email
+
             mail_id = request.env['mail.mail'].sudo().create({
                 'body_html': email_desc,
                 'subject': 'Website: New demand',
-                'email_to': 'valentinthirion@gmail.com',
-                'email_from': 'noreply@meservices.be',
+                'email_to': email_to,
+                'email_from': email_to,
                 'state': 'outgoing',
                 'type': 'email',
                 'auto_delete': False,
