@@ -4,80 +4,91 @@
     <data>
         <template id="snippet_meservices" name="ME Services Contact Form snippet">
             <section class="snippet_testimonial">
-                <div class="container text-center">
+                <div class="container">
+                  <div class="row">
+                    <h4 class="page-header mt-16 o_default_snippet_text" style="text-align: center; ">
+                      <font style="font-size: 24px;">Formulaire de contact</font>
+                    </h4>
+                  </div>
+                  <form method="POST" action="/contactform" enctype="multipart/form-data" _lpchecked="1">
                     <div class="row">
-                        <h4 class="page-header mt-16">Contact Form</h4>
-                        <form method="POST" action="/contactform" enctype="multipart/form-data">
-                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                            <div class="col-md-6" style="clear: left;">
-                                <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name" required="This field is required"/>
-                            </div>
-                            <div class="col-md-6" style="clear: left;">
-                                <input type="text" id="mobile" name="mobile" class="form-control" placeholder="Mobile" required="This field is required"/>
-                            </div>
-                            <div class="col-md-4" style="clear: left;">
-                                <input type="text" id="street" name="street" class="form-control" placeholder="Address" required="This field is required"/>
-                            </div>
-                            <div class="col-md-6" style="clear: left;">
-                                <input type="text" id="city" name="city" class="form-control" placeholder="City" required="This field is required"/>
-                            </div>
-                            <div class="col-md-2" style="clear: left;">
-                                <input type="text" id="zip" name="zip" class="form-control" placeholder="ZIP" required="This field is required"/>
-                            </div>
-
-                            <div class="col-md-4" style="clear: left;">
-                                <strong for='insect_type'>Insect type</strong>
-                                <select id="insect_type" name="insect_type" class="form-control" required="This field is required">
-                                    <option value="wasps">Wasps</option>
-                                    <option value="hornets">Hornets</option>
-                                    <option value="others">Others</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4" style="clear: left;">
-                                <strong for='nest_location'>Nest situation</strong>
-                                <select id="nest_location" name="nest_location" class="form-control" required="This field is required">
-                                    <option value="inside">Inside</option>
-                                    <option value="outside_floor">Outside on the floor</option>
-                                    <option value="outside_high">Outside high</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4" style="clear: left;">
-                                <textarea id="details" name="details" class="form-control" placeholder="Enter here details about the nest location..."/>
-                            </div>
-                            <div class="col-md-2" style="clear: left;">
-                                <strong for='already_came'>Already came</strong>
-                                <input type="checkbox" id="already_came" name="already_came" />
-                            </div>
-                            <div class="col-md-3" style="clear: left; display: none;" id="already_came_date_block">
-                                <strong for='already_came_date'>If already came, specify the date</strong>
-                                <input type="date" id="already_came_date" name="already_came_date" class="form-control o_website_form_input o_website_form_date"/>
-                            </div>
-                            <div class="col-md-6" style="clear: left;">
-                                <textarea id="description" name="description" class="form-control" placeholder="Give here every information that could help us prepare the intervention..."/>
-                            </div>
-                            <div class="col-md-1" style="clear: left;">
-                                <input type="submit" value="Send" class="btn btn-primary btn-lg"/>
-                            </div>
-
-                            <script>
-                <![CDATA[
-odoo.define('meservices.contact_form', ['web.ajax'], function (require) {
-    "use strict";
-    const checkbox = document.getElementById('already_came');
-    const already_came_date = document.getElementById('already_came_date_block');
-
-    checkbox.addEventListener('change', (event) => {
-      if (checkbox.checked) {
-        already_came_date.style.display = 'inline';
-      } else {
-        already_came_date.style.display = 'none';
-      }
-    });
-});
-            ]]>
-                            </script>
-                        </form>
+                      <input type="hidden" name="csrf_token" value="91c579b287ca2532cb120ac2b0ba89edd3f5a32ao1556225578"/>
+                      <div class="col-md-offset-2 col-md-4 mt-2">
+                        <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Nom" required="This field is required" style="text-align: left; cursor: auto; display: inline-block;"/>
+                      </div>
+                      <div class="col-md-4 mt-2">
+                        <input type="text" id="mobile" name="mobile" class="form-control" placeholder="GSM" required="This field is required"/>
+                      </div>
                     </div>
+                    <div class="row">
+                      <div class="col-md-offset-2 col-md-4 mt-2">
+                        <input type="text" id="street" name="street" class="form-control" placeholder="Adresse" required="This field is required"/>
+                      </div>
+                      <div class="col-md-2 mt-2">
+                        <input type="text" id="zip" name="zip" class="form-control" placeholder="Code postal" required="This field is required"/>
+                      </div>
+                      <div class="col-md-2 mt-2">
+                        <input type="text" id="city" name="city" class="form-control" placeholder="Ville" required="This field is required"/>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-offset-2 col-md-2 mt-2">
+                        <strong for="insect_type" class="o_default_snippet_text">Type d'insectes</strong>
+                        <select id="insect_type" name="insect_type" class="form-control" required="This field is required">
+                          <option value="wasps" class="o_default_snippet_text">Guêpes</option>
+                          <option value="hornets" class="o_default_snippet_text">Frelons</option>
+                          <option value="others" class="o_default_snippet_text">Autres</option>
+                        </select>
+                      </div>
+                      <div class="col-md-2 mt-2">
+                        <strong for="nest_location" class="o_default_snippet_text">Situation du nid</strong>
+                        <select id="nest_location" name="nest_location" class="form-control" required="This field is required">
+                          <option value="inside" class="o_default_snippet_text">Intérieur</option>
+                          <option value="outside_floor" class="o_default_snippet_text">Extérieur au sol</option>
+                          <option value="outside_high" class="o_default_snippet_text">Extérieur en hauteur</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4 mt-2">
+                        <textarea id="details" name="details" class="form-control" placeholder="Entrez ici quelques détails sur l'emplacement du nid"/>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-offset-2 col-md-4 mt-2">
+                        <input type="checkbox" id="already_came" name="already_came"/>
+                        <strong for="already_came" class="o_default_snippet_text">Déjà venu</strong>
+                        <div style="display: none;" id="already_came_date_block">
+                            <strong for="already_came_date" class="o_default_snippet_text"> - Si déjà venu, merci de spécifier la date</strong>
+                            <input type="date" id="already_came_date" name="already_came_date" class="form-control o_website_form_input o_website_form_date"/>
+                          </div>
+                      </div>
+
+                      <div class="col-md-4 mt-2">
+                        <textarea id="big_description" name="description" class="form-control" placeholder="Donnez nus toute information utile à notre intervention ..."/>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-offset-8 col-md-2">
+                        <input type="submit" value="Envoyer" class="btn btn-primary btn-lg"/>
+                      </div>
+                        <script class="o_default_snippet_text">
+                            <![CDATA[
+                                odoo.define('meservices.contact_form', ['web.ajax'], function (require) {
+                                    "use strict";
+                                    const checkbox = document.getElementById('already_came');
+                                    const already_came_date = document.getElementById('already_came_date_block');
+
+                                    checkbox.addEventListener('change', (event) => {
+                                      if (checkbox.checked) {
+                                        already_came_date.style.display = 'inline';
+                                      } else {
+                                        already_came_date.style.display = 'none';
+                                      }
+                                    });
+                                });
+                            ]]>
+                        </script>
+                      </div>
+                    </form>
                 </div>
             </section>
         </template>
