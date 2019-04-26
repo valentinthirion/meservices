@@ -34,7 +34,7 @@ class WebsiteMEServicesContactForm(http.Controller):
                 line_description = _('Insect type: ') + post['insect_type']
                 line_description += _('\nNest location: ') + post['nest_location']
                 line_description += _('\nDetails: ') + post['details']
-                already_came_date = ''
+                already_came_date = False
                 if 'already_came' in post:
                     already_came_date = datetime.strptime(post['already_came_date'], '%Y-%m-%d')
                     line_description += _('\nAlready came on: ') + datetime.strftime(already_came_date, '%d/%m/%Y')
