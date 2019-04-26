@@ -96,10 +96,14 @@
         <template id="contact_form_sent" name="Contact form sent">
             <t t-call="website.layout">
                 <section t-attf-class="container mt8" id="contact_form_sent">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            Thanks for sending us your request, we will be back to you soon.
-                            <br />
+                    <div class="row" style="margin-bottom: 25px">
+                        <div class="col-sm-4 col-md-offset-2 ml-2" style="text-align: center;">
+                            <img src="/web/image/516" class="pull-left" style="width: 100%;"/>
+                        </div>
+                        <div class="col-sm-4" style="text-align: center;">
+                            <b>
+                                <font style="font-size: 18px;">Merci pour votre message, nous reviendrons vers vous rapidement.</font>
+                            </b>
                         </div>
                     </div>
                 </section>
