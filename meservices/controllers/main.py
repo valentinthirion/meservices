@@ -74,7 +74,7 @@ class WebsiteMEServicesContactForm(http.Controller):
                 'body_html': email_desc,
                 'subject': 'Website: New demand',
                 'email_to': email_to,
-                'email_from': email_to,
+                'email_from': 'noreply@servicesmh.be',
                 'state': 'outgoing',
                 'type': 'email',
                 'auto_delete': False,
